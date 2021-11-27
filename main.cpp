@@ -79,31 +79,31 @@ int main() {
 
 
         // DEBUG
-        // cout << "\n\nDebug:::::: " << endl;
+        cout << "\n\nDebug:::::: " << endl;
 
 
-        // cout << "S: " << s << endl;
+        cout << "S: " << s << endl;
 
-        // set<int >::iterator d ;
-        // for (d = rem.begin() ; d != rem.end() ; d++ ) {
-        //     cout << *d<<" ";
-        //     s.erase(*d , 1);
+        set<int >::iterator d ;
+        for (d = rem.begin() ; d != rem.end() ; d++ ) {
+            cout << *d<<" ";
+            s.erase(*d , 1);
             
-        // }
-        // cout << endl;
+        }
+        cout << endl;
 
-        // cout << "S new: " << s << endl;
+        cout << "S new: " << s << endl;
 
-        // // find any sus or ntarsis
-        // size_t us = s.find("sus");
-        // size_t is = s.find("ntarsis");
+        // find any sus or ntarsis
+        size_t one = s.find("one");
+        size_t two = s.find("two");
 
-        // if (us != string::npos){
-        //     cout << "sus found: " << us << endl;
-        // }
-        // if (is != string::npos){
-        //     cout << "ntarsis found: " << is << endl;
-        // }
+        if (one != string::npos){
+            cout << "one found: " << one << endl;
+        }
+        if (two != string::npos){
+            cout << "two found: " << two << endl;
+        }
 
     
     }
