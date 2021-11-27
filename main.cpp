@@ -82,35 +82,6 @@ int main() {
 
         cout << endl;
 
-
-        // DEBUG
-        // cout << "\n\nDebug:::::: " << endl;
-
-
-        // cout << "S: " << s << endl;
-
-        // set<int >::iterator d ;
-        // for (d = rem.begin() ; d != rem.end() ; d++ ) {
-        //     cout << *d<<" ";
-        //     s.erase(*d , 1);
-            
-        // }
-        // cout << endl;
-
-        // cout << "S new: " << s << endl;
-
-        // // find any sus or ntarsis
-        // size_t one = s.find("one");
-        // size_t two = s.find("two");
-
-        // if (one != string::npos){
-        //     cout << "one found: " << one << endl;
-        // }
-        // if (two != string::npos){
-        //     cout << "two found: " << two << endl;
-        // }
-
-    
     }
     return 0;
 
