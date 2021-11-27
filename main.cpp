@@ -37,31 +37,43 @@ int main() {
         // empty set container
         set<int, greater<int> > rem;
 
-        // // account for edge cases
-        // size_t last_twone = s.find("twone");
-        // vector<size_t> tflags;
+        // account for edge cases
+        size_t last_twone = s.find("twone");
+        vector<size_t> tflags;
 
-        // // account for susus
-        // while (last_twone != string::npos){
-        //     tflags.push_back(last_twone); // flag it
-        //     rem.insert(last_twone + 2);  // to remove the second s in ntarsisus
-        //     s.replace(last_twone, 4,"jjjj"); // so the two inside twone is not found later on
+        // account for twone
+        while (last_twone != string::npos){
+            tflags.push_back(last_twone); // flag it
+            rem.insert(last_twone + 2);  // to remove the o in twone
+            s.replace(last_twone, 4,"jjjj"); // so the two inside twone is not found later on
 
-        //     last_twone = s.find("twone", last_twone + 4); // 4 bc twone is 5 chars long and u want to start with latest
-        // }
-
+            last_twone = s.find("twone", last_twone + 4); // 4 bc twone is 5 chars long and u want to start with latest
+        }
+        cout << "After TWONE Check: " << s << endl;
 
         size_t last_one = s.find("one");
         size_t last_two = s.find("two");
         // find all occurences
         while (last_one != string::npos){
             
-            rem.insert(last_one ); // to remove the n in one
+            rem.insert(last_one + 1); // to remove the n in one
             
-            last_one = s.find("one", last_one + 1); // 2 bc one is 3 chars long and u want to start with latest
+            last_one = s.find("one", last_one + 2); // 2 bc one is 3 chars long and u want to start with latest
         }
         while (last_two != string::npos){
-            rem.insert(last_two + 2);  // to remove the o in two
+
+            bool isAccounted = false;
+            for (const auto &item : tflags) {
+                if (item == last_two) {
+                    cout << "el is present in vector" << endl;
+                    isAccounted = true;
+                    break;
+                }
+            }
+            if (!isAccounted){
+                rem.insert(last_two + 1); // to remove the w in two
+            } // else do nothing bc already accounted for
+
 
             
             last_two = s.find("two", last_two + 2); // 2 bc two is 3 chars long and u want to start with latest
