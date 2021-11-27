@@ -49,23 +49,18 @@ int main() {
 
             last_twone = s.find("twone", last_twone + 4); // 4 bc twone is 5 chars long and u want to start with latest
         }
-        cout << "After TWONE Check: " << s << endl;
 
         size_t last_one = s.find("one");
         size_t last_two = s.find("two");
         // find all occurences
-        while (last_one != string::npos){
-            
+        while (last_one != string::npos){ 
             rem.insert(last_one + 1); // to remove the n in one
-            
             last_one = s.find("one", last_one + 2); // 2 bc one is 3 chars long and u want to start with latest
         }
         while (last_two != string::npos){
-
             bool isAccounted = false;
             for (const auto &item : tflags) {
                 if (item == last_two) {
-                    cout << "el is present in vector" << endl;
                     isAccounted = true;
                     break;
                 }
@@ -74,8 +69,6 @@ int main() {
                 rem.insert(last_two + 1); // to remove the w in two
             } // else do nothing bc already accounted for
 
-
-            
             last_two = s.find("two", last_two + 2); // 2 bc two is 3 chars long and u want to start with latest
         }
         
@@ -91,31 +84,31 @@ int main() {
 
 
         // DEBUG
-        cout << "\n\nDebug:::::: " << endl;
+        // cout << "\n\nDebug:::::: " << endl;
 
 
-        cout << "S: " << s << endl;
+        // cout << "S: " << s << endl;
 
-        set<int >::iterator d ;
-        for (d = rem.begin() ; d != rem.end() ; d++ ) {
-            cout << *d<<" ";
-            s.erase(*d , 1);
+        // set<int >::iterator d ;
+        // for (d = rem.begin() ; d != rem.end() ; d++ ) {
+        //     cout << *d<<" ";
+        //     s.erase(*d , 1);
             
-        }
-        cout << endl;
+        // }
+        // cout << endl;
 
-        cout << "S new: " << s << endl;
+        // cout << "S new: " << s << endl;
 
-        // find any sus or ntarsis
-        size_t one = s.find("one");
-        size_t two = s.find("two");
+        // // find any sus or ntarsis
+        // size_t one = s.find("one");
+        // size_t two = s.find("two");
 
-        if (one != string::npos){
-            cout << "one found: " << one << endl;
-        }
-        if (two != string::npos){
-            cout << "two found: " << two << endl;
-        }
+        // if (one != string::npos){
+        //     cout << "one found: " << one << endl;
+        // }
+        // if (two != string::npos){
+        //     cout << "two found: " << two << endl;
+        // }
 
     
     }
